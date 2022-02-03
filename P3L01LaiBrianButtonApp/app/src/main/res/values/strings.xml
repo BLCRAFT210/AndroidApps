@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">P3L01LaiBrianButtonApp</string>
+    <string name="increment">Increment</string>
+    <string name="joe_greeting">Hello Joe!</string>
+    <string name="decrement">Decrement</string>
+    <string name="reset">Reset</string>
+</resources>
