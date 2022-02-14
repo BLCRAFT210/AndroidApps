@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">P3L02LaiBrianGUIBasics</string>
+    <string name="app_name">Brian\'s Greatest App</string>
+    <string name="name_prompt">Put your name here</string>
+    <string name="click_me">Click me</string>
+
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Violet</item>
+    </string-array>
 </resources>
