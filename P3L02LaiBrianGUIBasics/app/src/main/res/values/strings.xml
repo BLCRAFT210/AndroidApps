@@ -2,13 +2,14 @@
     <string name="app_name">Brian\'s Greatest App</string>
     <string name="name_prompt">Put your name here</string>
     <string name="click_me">Click me</string>
+    <string name="change_color">Change color</string>
 
     <string-array name="colors">
-        <item>Red</item>
-        <item>Orange</item>
-        <item>Yellow</item>
-        <item>Green</item>
-        <item>Blue</item>
-        <item>Violet</item>
+        <item>red</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>violet</item>
     </string-array>
 </resources>
