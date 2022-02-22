@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main_layout">
 
     <TextView
         android:id="@+id/top_left"
@@ -13,6 +14,7 @@
         android:gravity="center"
         android:tag="topLeft"
         android:textSize="@dimen/fontsize"
+        android:background="#00FF00"
         android:onClick="click"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -24,6 +26,7 @@
         android:gravity="center"
         android:tag="topRight"
         android:textSize="@dimen/fontsize"
+        android:background="#FFFF00"
         android:onClick="click"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -35,6 +38,7 @@
         android:gravity="center"
         android:tag="bottomLeft"
         android:textSize="@dimen/fontsize"
+        android:backgroundTint="#0000FF"
         android:onClick="click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -46,6 +50,7 @@
         android:gravity="center"
         android:tag="bottomRight"
         android:textSize="@dimen/fontsize"
+        android:backgroundTint="#FF0000"
         android:onClick="click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -60,6 +65,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/opacitybar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="255"
+        android:progress="255"
+        app:layout_constraintTop_toBottomOf="@id/seekbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30sp"
         app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
