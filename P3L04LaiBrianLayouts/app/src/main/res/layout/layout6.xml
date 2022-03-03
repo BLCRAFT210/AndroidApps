@@ -12,10 +12,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.15">
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="@dimen/small_len"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Layout 6"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/medium_len"
+                android:layout_height="wrap_content"
+                android:text="Layout 6"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
