@@ -1,9 +1,15 @@
 package com.example.p3l04laibrianlayouts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             i = (++i)%ids.length;
             setContentView(ids[i]);
         }
+        Toast.makeText(getApplicationContext(), "Changed to Layout "+(i+1), Toast.LENGTH_SHORT).show();
         return true;
     }
 }
