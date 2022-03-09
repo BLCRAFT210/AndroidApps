@@ -15,13 +15,13 @@ public class LifecycleData {
     public String toString()
     {
         return duration + "\n"+
-            "onCreate \t"+onCreate+"\n" +
-            "onStart \t"+onStart+"\n" +
-            "onResume \t"+onResume+"\n" +
-            "onPause \t"+onPause+"\n" +
-            "onStop \t"+onStop+"\n" +
-            "onRestart \t"+onRestart+"\n" +
-            "onDestroy \t"+onDestroy+"\n";
+                "onCreate \t\t\t\t\t"+onCreate+"\n" +
+                "onStart \t\t\t\t\t\t\t"+onStart+"\n" +
+                "onResume \t\t\t\t"+onResume+"\n" +
+                "onPause \t\t\t\t\t"+onPause+"\n" +
+                "onStop \t\t\t\t\t\t\t"+onStop+"\n" +
+                "onRestart \t\t\t\t"+onRestart+"\n" +
+                "onDestroy \t\t\t\t"+onDestroy+"\n";
     }
 
     String toJson()
@@ -34,5 +34,32 @@ public class LifecycleData {
     {
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(fromSharedPreferences, LifecycleData.class);
+    }
+
+    public void updateEvent(String currentEnclosingMethod) {
+        switch(currentEnclosingMethod){
+            case "onCreate":
+                onCreate++;
+                break;
+            case "onStart":
+                onStart++;
+                break;
+            case "onResume":
+                onResume++;
+                break;
+            case "onPause":
+                onPause++;
+                break;
+            case "onStop":
+                onStop++;
+                break;
+            case "onRestart":
+                onRestart++;
+                break;
+            case "onDestroy":
+                onDestroy++;
+                break;
+            default:break;
+        }
     }
 }
