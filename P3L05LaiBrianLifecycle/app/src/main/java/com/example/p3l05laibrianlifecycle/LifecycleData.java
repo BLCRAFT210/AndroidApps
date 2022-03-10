@@ -62,4 +62,15 @@ public class LifecycleData {
             default:break;
         }
     }
+
+    public void clear()
+    {
+        onCreate = 0;
+        onStart = 0;
+        onResume = 0;
+        onPause = 0;
+        onStop = 0;
+        onRestart = 0;
+        onDestroy = 0;
+    }
 }

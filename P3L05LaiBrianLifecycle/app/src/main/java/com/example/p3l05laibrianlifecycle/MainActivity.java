@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences(TAG, MODE_PRIVATE);
         editor = sharedPreferences.edit();
         currentRun = new LifecycleData();
         currentRun.duration = "Current Run";
@@ -55,5 +57,50 @@ public class MainActivity extends AppCompatActivity {
         lifeTime.updateEvent(currentEnclosingMethod);
         displayData();
         storeData();
+    }
+
+    public void clearCount(View view)
+    {
+        currentRun.clear();
+        lifeTime.clear();
+        displayData();
+        storeData();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        String currentEnclosingMethod = new Throwable().getStackTrace()[0].getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        String currentEnclosingMethod = new Throwable().getStackTrace()[0].getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        String currentEnclosingMethod = new Throwable().getStackTrace()[0].getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        String currentEnclosingMethod = new Throwable().getStackTrace()[0].getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        String currentEnclosingMethod = new Throwable().getStackTrace()[0].getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        String currentEnclosingMethod = new Throwable().getStackTrace()[0].getMethodName();
+        updateCount(currentEnclosingMethod);
     }
 }
