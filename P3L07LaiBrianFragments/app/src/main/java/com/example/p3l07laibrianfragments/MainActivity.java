@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void update_greeting(View view) {
         FragmentB fragmentB = (FragmentB) getSupportFragmentManager().findFragmentByTag("FragmentB");
-        ((TextView)fragmentB.view.findViewById(R.id.bTextView)).setText("You're my superstar");
+        if (fragmentB != null)
+            ((TextView)fragmentB.view.findViewById(R.id.bTextView)).setText("You're my superstar");
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.animator.slide_up, R.animator.slide_down);
+        ft.replace(R.id.fragmentContainer, FragmentB.newInstance(3,"is for horses"), "BetterFragment");
+        ft.commit();
+    }
+
+    public void fragmentButtonOnClick(View view)
+    {
+        ((Button) view).setText("I hath been clicketh");
     }
 }

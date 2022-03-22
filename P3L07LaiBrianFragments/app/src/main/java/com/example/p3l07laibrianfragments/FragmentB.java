@@ -37,6 +37,6 @@ public class FragmentB extends Fragment {
         TextView textview = view.findViewById(R.id.bTextView);
         textview.setText("Hey "+name);
         Button button = view.findViewById(R.id.bButton);
-        button.setText("Press me"+age);
+        button.setText("Press me "+age);
     }
 }
