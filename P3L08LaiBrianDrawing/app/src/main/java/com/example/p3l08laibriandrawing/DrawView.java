@@ -11,6 +11,9 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public class DrawView extends View {
+    RectF rectF = new RectF(420,1125,660,1325);
+    Paint p = new Paint();
+    int deg = 0 ;
     public DrawView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
@@ -18,7 +21,7 @@ public class DrawView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Paint p = new Paint();
+        p.setStyle(Paint.Style.FILL);
         p.setColor(Color.BLACK);
         canvas.drawCircle(540,1140,300, p);
         p.setColor(Color.WHITE);
@@ -26,7 +29,13 @@ public class DrawView extends View {
         p.setColor(Color.BLACK);
         canvas.drawCircle(440,1050,30, p);
         canvas.drawCircle(640,1050,30, p);
-        RectF rectF = new RectF(420,1125,660,1325);
-        canvas.drawArc(rectF,0,180,true,p);
+
+        p.setStyle(Paint.Style.STROKE);
+        p.setStrokeWidth(15);
+        canvas.save();
+        //canvas.rotate(deg++, rectF.centerX(),rectF.centerY());
+        canvas.drawArc(rectF,deg++,180-deg,false,p);
+        canvas.restore();
+        invalidate();
     }
 }
