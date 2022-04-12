@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 public class DrawView extends View {
     RectF rectF = new RectF(420,1125,660,1325);
     Paint p = new Paint();
-    int deg = 0 ;
+    boolean frowning = false;
     public DrawView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
@@ -24,7 +24,10 @@ public class DrawView extends View {
         p.setStyle(Paint.Style.FILL);
         p.setColor(Color.BLACK);
         canvas.drawCircle(540,1140,300, p);
-        p.setColor(Color.WHITE);
+        if (frowning)
+            p.setColor(Color.rgb(255,(int) (255*(180-rectF.bottom+rectF.top)/180),0));
+        else
+            p.setColor(Color.YELLOW);
         canvas.drawCircle(540,1140,295, p);
         p.setColor(Color.BLACK);
         canvas.drawCircle(440,1050,30, p);
@@ -32,9 +35,24 @@ public class DrawView extends View {
 
         p.setStyle(Paint.Style.STROKE);
         p.setStrokeWidth(15);
+
+        if (rectF.bottom<rectF.top){
+            frowning = true;
+        }
+
         canvas.save();
-        //canvas.rotate(deg++, rectF.centerX(),rectF.centerY());
-        canvas.drawArc(rectF,deg++,180-deg,false,p);
+        if (!frowning)
+        {
+            canvas.drawArc(rectF,0,180,false,p);
+            rectF.bottom--;
+            rectF.top++;
+        }
+        else
+        {
+            canvas.drawArc(rectF,180,180,false,p);
+            if (rectF.bottom<1375)
+                rectF.bottom+=2;
+        }
         canvas.restore();
         invalidate();
     }
