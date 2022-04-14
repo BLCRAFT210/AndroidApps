@@ -11,7 +11,8 @@
         android:onClick="fragmentButtonOnClick"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent=".4"/>
+        app:layout_constraintWidth_percent=".4"
+        android:textColor="@color/black"/>
 
     <TextView
         android:layout_width="0dp"

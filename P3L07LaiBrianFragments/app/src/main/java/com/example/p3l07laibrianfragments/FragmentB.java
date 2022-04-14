@@ -13,12 +13,13 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentB extends Fragment {
     View view;
-    public static FragmentB newInstance(int x,String s)
+    public static FragmentB newInstance(int x,String s, int c)
     {
         FragmentB fragmentB = new FragmentB();
         Bundle args = new Bundle();
         args.putInt("MyAge", x);
         args.putString("MyName", s);
+        args.putInt("MyColor", c);
         fragmentB.setArguments(args);
         return fragmentB;
     }
@@ -34,9 +35,11 @@ public class FragmentB extends Fragment {
         this.view = view;
         int age = getArguments().getInt("MyAge", 1);
         String name = getArguments().getString("MyName", "Joe");
+        int color = getArguments().getInt("MyColor", getResources().getColor(R.color.red));
         TextView textview = view.findViewById(R.id.bTextView);
         textview.setText("Hey "+name);
         Button button = view.findViewById(R.id.bButton);
         button.setText("Press me "+age);
+        button.setBackgroundColor(color);
     }
 }
