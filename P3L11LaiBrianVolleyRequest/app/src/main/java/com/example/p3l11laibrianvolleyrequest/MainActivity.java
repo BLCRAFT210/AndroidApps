@@ -19,7 +19,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     RequestQueue queue;
-    String URL = "https://mw-demo.sites.tjhsst.edu/data";
+    String URL = "https://blaivolley.sites.tjhsst.edu/data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject object = new JSONObject("{\"data\":"+response+"}");
                     JSONArray array = object.getJSONArray("data");
                     String toPrint = "";
-                    for (int id = 0;id<=9;id++)
+                    for (int id = 0;id<=3;id++)
                     {
                         JSONObject currentData = array.getJSONObject(id);
                         toPrint += "id: "+currentData.getString("id")+" | category: "+currentData.getString("category")+" / "+currentData.getString("increment")+"-"+currentData.getString("decrement")+"\n";
